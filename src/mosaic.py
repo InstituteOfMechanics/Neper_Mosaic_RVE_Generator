@@ -450,7 +450,7 @@ def main(input_file: str,
         
         gmsh.fltk.run()
         
-    gmsh.finalize()
+    #gmsh.finalize()
 
 
 if __name__ == "__main__":
