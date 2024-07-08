@@ -82,5 +82,5 @@ Mosaic was created at the Institute of Mechanics, TU Dortmund University, German
 
 ## License
 
-TODO: Specify the exact license
+GPL-3.0 license
 
