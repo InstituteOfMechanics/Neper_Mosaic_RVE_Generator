@@ -30,7 +30,7 @@ The following options are available:
 | `--help`               | `-h`       | show help message and options                      |
 | `--verbose`            | `-v`       | increase output verbosity                          |
 | `--show_gui`           |            | open gmsh GUI after importing the model            |
-| `--show_gmsh_output`   |            | display gmsh output in the terminal                |
+| `--show_gmsh`          |            | display gmsh output in the terminal                |
 | `--ciGen`              |            | store .msh files in a format compatible with ciGen |
 
 
