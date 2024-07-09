@@ -271,7 +271,7 @@ def parse_args(argstr: str = None) -> Dict[str, str]:
                         default=False,
                         help="Open the gmsh GUI after the model was imported.")
     
-    parser.add_argument("--show_gmsh_output",
+    parser.add_argument("--show_gmsh",
                         action="store_true",
                         default=False,
                         help="Show gmsh output on stdout.")
@@ -401,7 +401,7 @@ def main(input_file: str,
          output_files: str,
          verbose: bool = False,
          show_gui: bool = False, 
-         show_gmsh_output: bool = False,
+         show_gmsh: bool = False,
          ciGen: bool = False,
          ) -> None:
     setup_logger(verbose)
@@ -416,7 +416,7 @@ def main(input_file: str,
 
     gmsh.initialize()
     
-    gmsh.option.setNumber("General.Terminal", int(show_gmsh_output))
+    gmsh.option.setNumber("General.Terminal", int(show_gmsh))
 
     import_neper_model_to_occ(input_file)
     
@@ -462,7 +462,7 @@ if __name__ == "__main__":
     #               "testout.msh",
     #               "-v",
     #               "--show_gui",
-    #               "--show_gmsh_output",
+    #               "--show_gmsh",
     #               ]
 
     # args = parse_args(debug_args)
