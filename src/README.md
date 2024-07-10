@@ -12,7 +12,7 @@ A periodic tesselation in x- and y-periodic with 256 grains is provided and ciGe
 
     python3 src/mosaic.py examples/n256-id1.geo testout.msh --ciGen
 
-
+Additionally, 
 ## Three-dimensional examples
 
 A periodic tesselation in x-, y- and z-direction with 64 grains is provided. Gmsh compatible mesh (.msh) and geometry (.geo_unrolled) file, Abaqus compatible mesh (.inp) file and ParaView compatible mesh (.vtk) file are selected as output formats.
@@ -22,5 +22,6 @@ A periodic tesselation in x-, y- and z-direction with 64 grains is provided. Gms
 ## References
 
 R. Quey, P. R. Dawson, F. Barbe, Large-scale 3D random polycrystals for the finite element method: Generation, meshing and remeshing, Comput. Methods Appl. Mech. Engrg. 200 (17-20) (2011) 1729–1745. doi:10.1016/j.cma.2011.01.002
+
 V. P. Nguyen, An open source program to generate zero-thickness cohesive interface elements, Adv. Eng. Softw. 74 (2014) 27–39. doi:10.1016/j.advengsoft.2014.04.002
 
