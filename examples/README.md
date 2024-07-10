@@ -12,7 +12,7 @@ A periodic tesselation in x- and y-periodic with 256 grains is provided and ciGe
 
     python3 src/mosaic.py examples/n256-id1.geo testout.msh --ciGen
 
-Additionally number_of_grains = [5, 400] are provided as simple input examples.
+Additionally n5-id1.geo and n400-id1.geo corresponding 5 and 400 grains respectively are provided as simple input examples.
 
 ## Three-dimensional examples
 
@@ -20,7 +20,7 @@ A periodic tesselation in x-, y- and z-direction with 64 grains is provided. Gms
 
     python3 src/mosaic.py examples/n64-id1.geo testout.msh testout.geo_unrolled testout.inp testout.vtk 
     
-Additionally number_of_grains = [3, 4, 20] are provided as simple input examples.
+Additionally n3-id1.geo, n4-id1.geo and n20-id1.geo corresponding 3, 4 and 20 grains are provided as simple input examples.
 
 ## References
 
