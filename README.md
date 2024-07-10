@@ -12,7 +12,7 @@ The source code for Mosaic is available from our [github repository](https://www
 
 ## Usage
 
-Mosaic can be used from the command line, or imported as a Python module to integrate it into your own projects.
+Mosaic can be used from the command line or imported as a Python module to integrate it into your own projects.
 
 ### Command-line usage
 
@@ -44,7 +44,7 @@ You can use all functionalities of Mosaic in your own python scripts through the
     mosaic.main(inputfile, outputfiles)
 ```
 
-The `main` function has the same optional arguments as described in the table above, but does not accept shorthands. 
+The `main` function has the same optional arguments as described in the table above but does not accept shorthands. 
 
 If you want more control over the imported model, you can also mix the usage of the mosaic and gmsh APIs:
 
@@ -64,12 +64,12 @@ gmsh.fltk.run()
 
 ### Examples
 
-Mosaic comes with some examples to demonstrate the usage. Check them out in the examples folder!
+Mosaic comes in some examples to demonstrate the usage. Check them out in the examples folder!
 
 
 ## Support
 
-If you encounter any bugs with Mosaic, please open an issue in our github repository! Since Mosaic is a non-commercial project, no further support is offered.
+If you encounter any bugs with Mosaic, please open an issue in our github repository!
 
 
 ## Contributing
