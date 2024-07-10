@@ -3,7 +3,7 @@
 #
 #   Mosaic - Periodic RVE Generator on Unit Domain
 #
-#   Copyright (C) 2024, Dilek Güzel, Tim Furlan, Tobias Kaiser and Andreas Menzel
+#   Copyright (C) 2024, Dilek Güzel, Tim Furlan, Tobias Kaiser and Andreas Menzel, Institute of Mechanics, TU Dortmund University, Germany,
 #
 #   This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 #
