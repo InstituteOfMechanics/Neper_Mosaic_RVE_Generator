@@ -4,23 +4,23 @@ Several examples in two- and three-dimensions are given. Input files in .geo for
 
 ## Two-dimensional examples
 
-A periodic tesselation in x- and y-direction with 100 grains is provided and Gmsh compatible .msh file is chosen as output. To execute Mosaic from the command line
+A periodic tesselation in x- and y-direction with 100 grains is provided and a Gmsh compatible .msh file is chosen as output. You can run this example with the command line 
 
     python3 src/mosaic.py examples/n100-id1.geo testout.msh -v --show_gui --show_gmsh
     
-A periodic tesselation in x- and y-periodic with 256 grains is provided and ciGen (Nguyen, 2014) compatible output is selected. To execute Mosaic from the command line
+A periodic tesselation in x- and y-periodic with 256 grains is provided and a ciGen (Nguyen, 2014) compatible output is selected. You can run this example with the command line 
 
     python3 src/mosaic.py examples/n256-id1.geo testout.msh --ciGen
 
-Additionally n5-id1.geo and n400-id1.geo corresponding 5 and 400 grains respectively are provided as simple input examples.
+Additionally, n5-id1.geo and n400-id1.geo corresponding to 5 and 400 grain microstructures, respectively, are provided as input examples.
 
 ## Three-dimensional examples
 
-A periodic tesselation in x-, y- and z-direction with 64 grains is provided. Gmsh compatible mesh (.msh) and geometry (.geo_unrolled) file, Abaqus compatible mesh (.inp) file and ParaView compatible mesh (.vtk) file are selected as output formats.
+A periodic tesselation in x-, y- and z-direction with 64 grains is provided. A Gmsh compatible mesh (.msh) and geometry (.geo_unrolled) file, an Abaqus compatible mesh (.inp) file and a ParaView compatible mesh (.vtk) file are selected as output:
 
     python3 src/mosaic.py examples/n64-id1.geo testout.msh testout.geo_unrolled testout.inp testout.vtk 
     
-Additionally n3-id1.geo, n4-id1.geo and n20-id1.geo corresponding 3, 4 and 20 grains are provided as simple input examples.
+Additionally n3-id1.geo, n4-id1.geo and n20-id1.geo corresponding to 3, 4 and 20 grain microstructures are provided as input examples.
 
 ## References
 
