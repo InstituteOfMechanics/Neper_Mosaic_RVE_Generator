@@ -60,7 +60,7 @@ def parse_args(argstr=""):
                         default=0.0,
                         help="z-origin of the rectilinear domain.")
     
-    parser.add_argument("-lc", "--element_size",
+    parser.add_argument("-cl", "--element_size",
                         type=float,
                         default=0.1,
                         help="Characteristic length of the elements.")
