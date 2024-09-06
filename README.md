@@ -7,7 +7,9 @@ Mosaic is an open-source Python software tool designed to integrate non-rectilin
 
 ## Installation
 
-The source code for Mosaic is available from our [github repository](https://www.github.com). After acceptance of the submission, it will also be made available through pip.
+The source code for Mosaic is available from our [github repository](https://www.github.com). After acceptance of the submission, it will also be made available through pip. Activate your conda environment, once your environment is active, run the following command 
+
+    pip install -e.
 
 
 ## Usage
@@ -32,6 +34,8 @@ The following options are available:
 | `--show_gui`           |            | open gmsh GUI after importing the model            |
 | `--show_gmsh`          |            | display gmsh output in the terminal                |
 | `--ciGen`              |            | store .msh files in a format compatible with ciGen |
+| `-x0, -y0, -z0`        |            | x-, y-, z-translation of the rectilinear domain    |
+| `-cl`                  |            | Characteristic element length                      |
 
 
 ### API usage
