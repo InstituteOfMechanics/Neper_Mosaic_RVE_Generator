@@ -7,7 +7,7 @@ Mosaic is an open-source Python software tool designed to integrate non-rectilin
 
 ## Installation
 
-The source code for Mosaic is available from our [github repository](https://www.github.com). After acceptance of the submission, it will also be made available through pip. Activate your conda environment, once your environment is active, run the following command 
+The source code for Mosaic is available from our [github repository](https://www.github.com). After acceptance of the submission, it will also be made available through pip. Pull the repository and activate your conda environment, once your environment is active, run the following command 
 
     pip install -e.
 
