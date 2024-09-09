@@ -14,7 +14,9 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        python-version: ["3.9"]
+        python-version: ["3.7", "3.9", "3.12"]
+        gmsh-version: ["4.12", "4.13"]
+        
 
     steps:
     - uses: actions/checkout@v4
@@ -26,6 +28,7 @@ jobs:
       run: |
         sudo apt-get -y install libglu1 libxcursor-dev libxft2 libxinerama1 libfltk1.3-dev libfreetype6-dev libgl1-mesa-dev libocct-foundation-dev libocct-data-exchange-dev 
         python -m pip install --upgrade pip
+        python -m pip install gmsh==${{ matrix.gmsh-version }}
         python -m pip install .
     - name: Test with pytest
       run: |
