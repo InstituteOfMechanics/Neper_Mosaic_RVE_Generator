@@ -9,7 +9,7 @@ Mosaic is an open-source Python software tool designed to integrate non-rectilin
 
 The source code for Mosaic is available from our [github repository](https://www.github.com). After acceptance of the submission, it will also be made available through pip. Pull the repository and activate your conda environment, once your environment is active, run the following command 
 
-    pip install -e.
+    pip install -e .
 
 
 ## Usage
@@ -20,9 +20,9 @@ Mosaic can be used from the command line or imported as a Python module to integ
 
 To execute Mosaic from the command line, use the following syntax:
 
-    python3 mosaic.py inputfile.geo outputfiles
+    python3 -m neper_mosaic inputfile.geo outputfile1 [outputfile2, ...]
 
-Note that multiple output files can be specified for one input.
+Note that multiple output files can be specified for one input, but at least one must be given.
 
 
 The following options are available:
@@ -34,8 +34,10 @@ The following options are available:
 | `--show_gui`           |            | open gmsh GUI after importing the model            |
 | `--show_gmsh`          |            | display gmsh output in the terminal                |
 | `--ciGen`              |            | store .msh files in a format compatible with ciGen |
-| `-x0, -y0, -z0`        |            | x-, y-, z-translation of the rectilinear domain    |
-| `-cl`                  |            | Characteristic element length                      |
+| `--box_x_position`     | `-x0`      | x-translation of the rectilinear domain            |
+| `--box_y_position`     | `-y0`      | y-translation of the rectilinear domain            |
+| `--box_z_position`     | `-z0`      | z-translation of the rectilinear domain            |
+| `--element_size`       | `-cl`      | Characteristic element length                      |
 
 
 ### API usage
@@ -43,28 +45,36 @@ The following options are available:
 You can use all functionalities of Mosaic in your own python scripts through the mosaic API. The syntax looks as follows:
 
 ```python
-    import mosaic
+    import neper_mosaic as mosaic
 
     mosaic.main(inputfile, outputfiles)
 ```
 
-The `main` function has the same optional arguments as described in the table above but does not accept shorthands. 
+The `main` function has the same optional arguments as described in the table above but does not accept shorthands.
 
 If you want more control over the imported model, you can also mix the usage of the mosaic and gmsh APIs:
 
 ```python
 import gmsh
-from mosaic import import_neper_model_to_occ
+from neper_mosaic import load_rectilinear_geometry
+
+# in this case, gmsh has to be initialized manually
+gmsh.initialize()
 
 # use mosaic to load a model created by Neper into OCC and create a rectilinear version
-import_neper_model_to_occ(input_file.geo)
+load_rectilinear_domain("input_file.geo")
 
 # then we can use the gmsh API or even the GUI to manipulate the result
 gmsh.fltk.run()
 
 # in this case, we have to implement saving etc ourselves...
 
+# at the end of the program, finalize gmsh
+gmsh.finalize()
+
 ```
+
+The examples folder of the Mosaic repository contains small examples for both API use cases.
 
 ### Examples
 
