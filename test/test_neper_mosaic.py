@@ -3,6 +3,7 @@ Tests for neper_mosaic.
 
 """
 import pytest
+import numpy as np
 import gmsh
 from neper_mosaic import main, load_rectilinear_geometry
 
@@ -108,7 +109,7 @@ def test_ciGen(tmp_path):
         assert file.is_file()
 
 def test_loading_2d(gmsh_instance, tmp_path):
-    """load_rectilinear_geometry() is working for 2d."""
+    """Load_rectilinear_geometry() is working for 2d."""
     input_file = "2d-n5-id1.geo"
 
     assert len(gmsh.model.getEntities()) == 0
@@ -116,14 +117,50 @@ def test_loading_2d(gmsh_instance, tmp_path):
     load_rectilinear_geometry(input_file)
     assert len(gmsh.model.getEntities()) > 0
 
-def test_loading_3d(gmsh_instance, tmp_path):
-    """load_rectilinear_geometry() is working in 3d."""
+def test_loading_3d(gmsh_instance):
+    """Load_rectilinear_geometry() is working in 3d."""
     input_file = "3d-n4-id1.geo"
 
     assert len(gmsh.model.getEntities()) == 0
 
     load_rectilinear_geometry(input_file)
     assert len(gmsh.model.getEntities()) > 0
+
+def test_rve_position_2d(gmsh_instance, tmp_path):
+    """Geometry should have the same bounding box independent of trim position (2d)."""
+    input_file = "2d-n5-id1.geo"
+
+    load_rectilinear_geometry(input_file)
+    bounds_before = gmsh.model.getBoundingBox(-1, -1)
+
+    gmsh.clear()
+
+    load_rectilinear_geometry(input_file,
+                              box_x_position=0.1,
+                              box_y_position=0.1)
+
+    bounds_after = gmsh.model.getBoundingBox(-1, -1)
+
+    assert np.allclose(bounds_before, bounds_after)
+
+def test_rve_position_3d(gmsh_instance, tmp_path):
+    """Geometry should have the same bounding box independent of trim position (3d)."""
+    input_file = "3d-n4-id1.geo"
+
+    load_rectilinear_geometry(input_file)
+    bounds_before = gmsh.model.getBoundingBox(-1, -1)
+
+    gmsh.clear()
+
+    load_rectilinear_geometry(input_file,
+                              box_x_position=0.1,
+                              box_y_position=0.1,
+                              box_z_position=0.1)
+
+    bounds_after = gmsh.model.getBoundingBox(-1, -1)
+
+    assert np.allclose(bounds_before, bounds_after, atol=1e-6)
+
 
 if __name__ == "__main__":
     pytest.main()

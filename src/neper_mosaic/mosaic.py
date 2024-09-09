@@ -444,6 +444,11 @@ def create_geometry_tiling(mg, x0=0.0, y0=0.0, z0=0.0):
     None.
 
     """
+    if mg.dim == 2 and z0 != 0.0:
+        z0 = 0.0
+        msg = "Non-zero z0 specified for 2d model. Setting value to 0."
+        LOGGER.warning(msg)
+        
     # size of the periodic domain in x, y and z direction
     rx, ry, rz = mg.compute_domain_size()
 
