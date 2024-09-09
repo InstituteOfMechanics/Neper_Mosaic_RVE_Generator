@@ -80,6 +80,9 @@ The examples folder of the Mosaic repository contains small examples for both AP
 
 Mosaic comes in some examples to demonstrate the usage. Check them out in the examples folder!
 
+## Tests
+
+Mosaic comes with a few tests for pytest, which can be found in the directory `Test`.
 
 ## Support
 
