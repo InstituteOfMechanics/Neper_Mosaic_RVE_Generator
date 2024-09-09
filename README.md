@@ -45,9 +45,9 @@ The following options are available:
 You can use all functionalities of Mosaic in your own python scripts through the mosaic API. The syntax looks as follows:
 
 ```python
-    import neper_mosaic as mosaic
+import neper_mosaic as mosaic
 
-    mosaic.main(inputfile, outputfiles)
+mosaic.main(inputfile, outputfiles)
 ```
 
 The `main` function has the same optional arguments as described in the table above but does not accept shorthands.
