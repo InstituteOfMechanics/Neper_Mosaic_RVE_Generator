@@ -13,7 +13,7 @@ You can see the detailed parameter description by calling
 import neper_mosaic
 
 # define input and output files
-input_file = "n4-id1.geo"
+input_file = "3d-n4-id1.geo"
 output_files = ["output/api_example_01.msh"]
 
 
