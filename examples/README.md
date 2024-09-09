@@ -14,7 +14,7 @@ python3 -m neper_mosaic 2d-n100-id1.geo output/testout_n100.msh -v --show_gui --
 A periodic tesselation in x- and y-periodic with 256 grains is provided and a ciGen (Nguyen, 2014) compatible output is selected. You can run this example with the command line 
 
 ```
-python3 -m neper_mosaic 2d-n256-id1.geo output/testout_n256.msh --ciGen
+python3 -m neper_mosaic 2d-n256-id1.geo output/testout_n256.msh -v --ciGen
 ```
 
 Additionally, `2d-n5-id1.geo` and `2d-n400-id1.geo` corresponding to 5 and 400 grain microstructures, respectively, are provided as input examples.
