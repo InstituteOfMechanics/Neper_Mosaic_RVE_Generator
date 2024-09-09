@@ -64,6 +64,11 @@ def parse_args(argstr=""):
                         type=float,
                         default=0.1,
                         help="Characteristic length of the elements.")
+                        
+    parser.add_argument("--ciGen",
+						action="store_true",
+						default=False,
+						help="Save .msh files in format compatible with ciGen.")
 
     args = parser.parse_args(argstr)
 
