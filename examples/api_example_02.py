@@ -32,6 +32,12 @@ gmsh.model.mesh.setSizeCallback(mesh_size_callback)
 gmsh.model.mesh.generate(3)
 
 # open the gmsh gui to inspect the results
+gmsh.option.setNumber("Mesh.SurfaceEdges", 0)
+gmsh.option.setNumber("Mesh.SurfaceFaces", 0)
+
+gmsh.option.setNumber("Mesh.VolumeEdges", 1)
+gmsh.option.setNumber("Mesh.VolumeFaces", 1)
+
 gmsh.fltk.run()
 
 # remember, we have to finalize ourselves
