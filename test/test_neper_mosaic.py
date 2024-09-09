@@ -126,7 +126,7 @@ def test_loading_3d(gmsh_instance):
     load_rectilinear_geometry(input_file)
     assert len(gmsh.model.getEntities()) > 0
 
-def test_rve_position_2d(gmsh_instance, tmp_path):
+def test_rve_position_2d(gmsh_instance):
     """Geometry should have the same bounding box independent of trim position (2d)."""
     input_file = "2d-n5-id1.geo"
 
@@ -143,7 +143,7 @@ def test_rve_position_2d(gmsh_instance, tmp_path):
 
     assert np.allclose(bounds_before, bounds_after)
 
-def test_rve_position_3d(gmsh_instance, tmp_path):
+def test_rve_position_3d(gmsh_instance):
     """Geometry should have the same bounding box independent of trim position (3d)."""
     input_file = "3d-n4-id1.geo"
 
@@ -161,6 +161,21 @@ def test_rve_position_3d(gmsh_instance, tmp_path):
 
     assert np.allclose(bounds_before, bounds_after, atol=1e-6)
 
+def test_exception_rve_z_coordinate_2d(gmsh_instance):
+    """Specifying z0 != 0 for 2d does not change the result."""
+    input_file = "2d-n5-id1.geo"
+
+    load_rectilinear_geometry(input_file)
+    bounds_before = gmsh.model.getBoundingBox(-1, -1)
+
+    gmsh.clear()
+
+    load_rectilinear_geometry(input_file,
+                              box_z_position=0.1)
+
+    bounds_after = gmsh.model.getBoundingBox(-1, -1)
+
+    assert np.allclose(bounds_before, bounds_after)
 
 if __name__ == "__main__":
     pytest.main()
