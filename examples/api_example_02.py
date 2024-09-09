@@ -11,7 +11,7 @@ import gmsh
 import neper_mosaic
 
 # define input
-input_file = "n4-id1.geo"
+input_file = "3d-n4-id1.geo"
 
 # we have to initialize/finalize gmsh ourselves in this example!
 gmsh.initialize()

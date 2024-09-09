@@ -22,10 +22,10 @@ Additionally, `2d-n5-id1.geo` and `2d-n400-id1.geo` corresponding to 5 and 400 g
 
 ## Three-dimensional examples
 
-A periodic tesselation in x-, y- and z-direction with 64 grains is provided. A Gmsh compatible mesh (.msh) and geometry (.geo_unrolled) file, an Abaqus compatible mesh (.inp) file and a ParaView compatible mesh (.vtk) file are selected as output:
+A periodic tesselation in x-, y- and z-direction with 64 grains is provided. A Gmsh compatible mesh (.msh) and geometry (.geo_unrolled) file, an Abaqus compatible mesh (.inp) file and a ParaView compatible mesh (.vtk) file are selected as output. Running this example might take a few minutes due to the higher geometric complexity.
 
 ```
-python3 -m neper_mosaic 3d-n64-id1.geo output/testout.msh output/testout.geo_unrolled output/testout.inp output/testout.vtk 
+python3 -m neper_mosaic -v 3d-n64-id1.geo output/testout.msh output/testout.geo_unrolled output/testout.inp output/testout.vtk 
 ```
 
 Additionally, `3d-n3-id1.geo`, `3d-n4-id1.geo` and `3d-n20-id1.geo` corresponding to 3, 4 and 20 grain microstructures are provided as input examples.
