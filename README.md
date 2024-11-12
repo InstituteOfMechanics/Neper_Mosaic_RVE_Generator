@@ -2,7 +2,7 @@
 
 ## Publication
 D. Güzel, T. Furlan, T. Kaiser, A. Menzel:
-Neper-Mosaic: Seamless Generation of periodic representative volume elements on unit domains
+Neper-Mosaic: Seamless Generation of periodic representative volume elements on unit domains.
 SoftwareX , 28, 101912, 2024,
 DOI: [10.1016/j.softx.2024.101912](https://www.sciencedirect.com/science/article/pii/S2352711024002826), Open Access.
 
