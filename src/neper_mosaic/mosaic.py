@@ -186,7 +186,8 @@ class ModelGeometry():
         num_entities = len(highest_dim_tags)
 
         for tag in highest_dim_tags:
-            group_tag = tag + self.index*num_entities
+            # group tag corresponds to the "original" entity tag (before copying)
+            group_tag = tag - self.index*num_entities
 
             existing_groups = [
                 tag for (dim, tag) in gmsh.model.getPhysicalGroups(dim=self.dim)]
